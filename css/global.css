@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "Nunito";
+    src: url(../assets/fonts/Nunito-VariableFont_wght.ttf);
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url(../assets/fonts/Nunito-Italic-VariableFont_wght.ttf);
+    font-style: italic;
+}
+
+/* Global styles for the entire html document scope */
+:root {
+    /* CSS Variables/Properties used for common styles i.e: colors */
+    --main-bg-color: hsla(30, 30%, 96%, 1);
+    --main-fg-color: hsla(24, 12%, 41%, 1);
+    --main-h1-color: hsla(16, 27%, 23%, 1);
+
+    /* Emotions colors */
+    --happy-color: hsla(24, 12%, 41%, 1);
+    --happy-light-color: hsla(74, 61%, 78%, 1);
+
+    --sad-color: hsla(215, 65%, 74%, 1);
+    --sad-light-color: hsla(215, 88%, 84%, 1);
+
+    --angry-color: hsla(7, 89%, 62%, 1);
+    --angry-light-color: hsla(7, 92%, 75%, 1);
+
+    --afraid-color: hsla(35, 74%, 63%, 1);
+    --afraid-light-color: hsla(35, 97%, 77%, 1);
+
+    --disgust-color: hsla(35, 74%, 63%, 1);
+    --disgust-light-color: hsla(263, 100%, 84%, 1);
+
+    --general-shadow: 0px 1px 20px 0px hsla(24, 12%, 41%, 0.2);
+
+    --general-border-color: linear-gradient(180deg, hsla(24, 27%, 23%, 0.08) 10%, hsla(24, 27%, 23%, 0.03) 100%);
+    --general-border: 4px solid var(--general-border-color);
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+}
