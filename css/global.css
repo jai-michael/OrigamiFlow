@@ -13,9 +13,11 @@
 /* Global styles for the entire html document scope */
 :root {
     /* CSS Variables/Properties used for common styles i.e: colors */
-    --main-bg-color: hsla(30, 30%, 96%, 1);
-    --main-fg-color: hsla(24, 12%, 41%, 1);
-    --main-h1-color: hsla(16, 27%, 23%, 1);
+    --primary-bg: hsla(30, 30%, 96%, 1);
+    --secondary-bg: hsla(25, 67%, 87%, 1);
+
+    --primary-fg: hsla(24, 12%, 41%, 1);
+    --primary-h1: hsla(16, 27%, 23%, 1);
 
     /* Emotions colors */
     --happy-color: hsla(24, 12%, 41%, 1);
@@ -35,10 +37,48 @@
 
     --general-shadow: 0px 1px 20px 0px hsla(24, 12%, 41%, 0.2);
 
-    --general-border-color: linear-gradient(180deg, hsla(24, 27%, 23%, 0.08) 10%, hsla(24, 27%, 23%, 0.03) 100%);
-    --general-border: 4px solid var(--general-border-color);
+    --general-border: 3px solid hsla(24, 27%, 23%, 0.08);
 }
 
+html {
+    margin: 0;
+    min-height: 100%;
+}
 body {
     font-family: "Nunito", sans-serif;
+    padding: 15px;
+    background-color: var(--primary-bg);
+    min-height: 100%;
 }
+
+main {
+    background-color: var(--secondary-bg);
+    box-shadow: var(--general-shadow);
+    height: 80vh;
+    border: var(--general-border);
+    border-radius: 25px;
+    padding: 20px;
+}
+
+/* Navigation Header */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 10%;
+}
+#of-icon {
+    width: fit-content;
+}
+.account-icon {
+    all: unset;
+    cursor: pointer;
+    height: 100%;
+}
+
+.account-icon img {
+    width: fit-content;
+    border: var(--general-border);
+    border-radius: 1000px;
+}
+/* ***************** */

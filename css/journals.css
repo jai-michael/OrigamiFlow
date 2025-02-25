@@ -1,47 +1,5 @@
 @import url(global.css);
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5ede3;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    background: #f1dbc4;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 800px;
-    text-align: center;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-}
-.account-icon {
-    all: unset;
-}
-.account-icon img {
-    width: 40px;
-    border-radius: 50%;
-    
-}
-
-.progress-tracker {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
 .step {
     width: 40px;
     height: 40px;
@@ -61,9 +19,10 @@ nav {
 
 .journal-container {
     background: #ffffff00;
+
     display: flex;
     flex-direction: column;
-    border:var(--general-border);
+    border: var(--general-border);
     border-radius: 15px;
     border-width: 2px;
     box-shadow: var(--general-shadow);
@@ -79,6 +38,8 @@ nav {
     font-size: 16px;
     color: #5a4231;
     resize: none;
+    border-radius: 15px;
+    padding: 0;
 }
 
 #word-counter {
