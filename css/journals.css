@@ -1,77 +1,68 @@
-@import url(global.css);
-
-.step {
-    width: 40px;
-    height: 40px;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure full-screen height */
+    width: 100%; /* Ensure full-screen width */
+    overflow: hidden; /* Prevent scrollbars */
+    font-family: sans-serif; /* Use a suitable font */
 }
 
-.active {
-    background-color: #5a4231;
-    padding: 5px;
-    border-radius: 50%;
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
 }
 
-.prompt-header {
-    font-size: 24px;
-    color: #5a4231;
+.left-section {
+    flex: 1; /* Takes up 50% of the container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center;  /* Horizontally center content */
+    padding: 20px; /* Add some padding */
+    text-align: center; /* Center text within the section */
+}
+
+.logo img {
+    max-width: 200px; /* Adjust logo size as needed */
     margin-bottom: 20px;
 }
 
-.journal-container {
-    background: #ffffff00;
-
-    display: flex;
-    flex-direction: column;
-    border: var(--general-border);
-    border-radius: 15px;
-    border-width: 2px;
-    box-shadow: var(--general-shadow);
-    position: relative;
-    text-align: left;
+.title {
+    font-size: 2em; /* Adjust title size */
+    margin-bottom: 20px;
+    color: #333; /* Darker heading color */
 }
 
-#journal-textbox {
-    width: 100%;
-    height: 150px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    color: #5a4231;
-    resize: none;
-    border-radius: 15px;
-    padding: 0;
+.description {
+    font-size: 1.2em; /* Adjust description size */
+    margin-bottom: 30px;
+    color: #666; /* Slightly lighter text color */
+    line-height: 1.6;
 }
 
-#word-counter {
-    position: absolute;
-    bottom: 10px;
-    right: 15px;
-    font-size: 14px;
-    color: #5a4231;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.voice-button {
-    display: flex;
-    align-items: center;
-    background: #5a4231;
+.button {
+    display: inline-block; /* Make the link behave like a button */
+    padding: 15px 30px;
+    background-color: #4CAF50; /* Green button */
     color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 5px;
+    font-size: 1.1em;
 }
 
-.submit-btn {
-    background: #5a4231;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-    float: right;
+.button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.right-section {
+    flex: 1; /* Takes up 50% of the container */
+    overflow: hidden; /* Hide any overflowing image content */
+}
+
+.right-section img {
+    width: 100%;  /* Image takes up the full width of its container */
+    height: 100%; /* Image takes up the full height of its container */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+    /* object-position: center;  Center the image within its container */
 }
