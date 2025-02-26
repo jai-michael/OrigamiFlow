@@ -7,3 +7,32 @@ class Emotion {
     }
 }
 let happyEmotion = new Emotion("Happy");
+let sadEmotion = new Emotion("Sad");
+let angryEmotion = new Emotion("Angry");
+let disgustEmotion = new Emotion("Disgust");
+let fearEmotion = new Emotion("Afraid");
+
+let emotions = [happyEmotion, sadEmotion, angryEmotion, disgustEmotion, fearEmotion];
+
+let emotionSelector = 0;
+let questionElement = document.querySelector(".question-section");
+let emotionMessageElement = document.querySelector(".emotion-message");
+
+function switchEmotion(direction) {
+    console.log(emotionSelector);
+    if (direction == "next") {
+        emotionSelector += 1;
+        if (emotionSelector > emotions.length - 1) {
+            emotionSelector = 0;
+        }
+    } else if (direction == "back") {
+        emotionSelector -= 1;
+        if (emotionSelector < 0) {
+            emotionSelector = emotions.length - 1;
+        }
+    }
+    let currentEmotion = emotions[emotionSelector];
+
+    questionElement.style.background = `var(${currentEmotion.cssColor})`;
+    emotionMessageElement.innerHTML = currentEmotion.phrase;
+}

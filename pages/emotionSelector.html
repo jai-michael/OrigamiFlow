@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../css/global.css" />
     </head>
     <body>
-        <script src="" defer></script>
+        <script src="../js/script.js" defer></script>
         <nav>
             <div class="nav-left">
                 <img src="../assets/images/logo.svg" alt="Origami Flow icon" id="of-icon" />
@@ -21,7 +21,7 @@
                 </button>
             </div>
         </nav>
-        <main>
+        <main class="question-section">
             <div class="progress-tracker">
                 <img id="fold-1" src="../assets/images/step_01.svg" alt="Origami step 1" />
                 <img id="fold-2" src="../assets/images/step_02.svg" alt="Origami step 2" />
@@ -42,6 +42,8 @@
 
             <div class="emotion-selector">
                 <!-- UNFINISHED; need to figure out best way to implement -->
+                <button onclick="switchEmotion('next')">Next Emotion</button>
+                <button onclick="switchEmotion('back')">Previous Emotion</button>
             </div>
 
             <a href="" id="submit-mood"></a>
