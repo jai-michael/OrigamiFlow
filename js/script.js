@@ -36,3 +36,13 @@ function switchEmotion(direction) {
     questionElement.style.background = `var(${currentEmotion.cssColor})`;
     emotionMessageElement.innerHTML = currentEmotion.phrase;
 }
+
+function storeData(element) {
+    localStorage.setItem(element.className, element.innerHTML);
+}
+
+function readStorage(data) {
+    const storedData = localStorage.getItem(data.className);
+
+    return storedData;
+}
