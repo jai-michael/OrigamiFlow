@@ -37,15 +37,24 @@ function switchEmotion(direction) {
     emotionMessageElement.innerHTML = currentEmotion.phrase;
 }
 
+// Store journal entry
 function storeJournal(element) {
     element = document.querySelector(element);
     console.log(element);
     localStorage.setItem(element.id, element.value);
     console.log(localStorage.getItem(element.id));
 }
-
+// Fetch jounral entry (incomplete)
 function readStorage(data) {
     const storedData = localStorage.getItem(data.className);
 
     return storedData;
 }
+
+// Journal Charactr counter
+journalTextarea = document.querySelector("#journal-textbox");
+jounralWordCount = document.querySelector("#character-amount");
+journalTextarea.addEventListener("input", event => {
+    const wordCount = journalTextarea.value.trim().split("").length;
+    jounralWordCount.innerHTML = wordCount;
+});

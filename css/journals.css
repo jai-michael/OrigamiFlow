@@ -1,5 +1,6 @@
 /* journals.css */
 @import url(global.css);
+
 .progress-tracker {
     margin-bottom: 40px;
 }
@@ -17,7 +18,7 @@
 }
 
 .title {
-    color: #4b332b;
+    color: var(--primary-h1);
     font-family: Nunito;
     font-size: 40px;
     font-weight: 700;
@@ -42,7 +43,7 @@
     resize: none; /* Prevent resizing */
 }
 
-.char-count {
+#journal-word-counter {
     position: absolute;
     bottom: 10px;
     right: 15px;
