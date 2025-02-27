@@ -37,8 +37,11 @@ function switchEmotion(direction) {
     emotionMessageElement.innerHTML = currentEmotion.phrase;
 }
 
-function storeData(element) {
-    localStorage.setItem(element.className, element.innerHTML);
+function storeJournal(element) {
+    element = document.querySelector(element);
+    console.log(element);
+    localStorage.setItem(element.id, element.value);
+    console.log(localStorage.getItem(element.id));
 }
 
 function readStorage(data) {

@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Origami Flow</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../css/global.css" />
-    <link rel="stylesheet" href="../css/journals.css" />
-</head>
-<body>
-    <nav>
-        <div class="nav-left">
-            <img src="../assets/images/logo.svg" alt="Origami Flow logo" id="of-icon" />
-        </div>
-        <div class="nav-right">
-            <button class="account-icon">
-                <img src="../assets/images/account.svg" alt="Profile picture" />
-            </button>
-        </div>
-    </nav>
-    <main>
-        <div class="progress-tracker">
-            <center>
-                <img id="progress bar" src="../assets/images/progress tracker.svg" alt="Origami steps"/>
-            </center>
-        </div>
-        <div class="journal-content"> 
-             <h1 class="title">What is causing your emotions right now?</h1>
-            <div class="text-area-container">
-                <textarea id="journal-textbox" placeholder="type something here..." maxlength="250"></textarea>
-                <span class="char-count">10/250</span>  </div>
-            <div class="voice-submit">
-                <button class="voice-button">
-                    <img src="../assets/icons/microphone.svg" alt="Voice Input" />
-                    <span>Use Your Voice Instead</span>
-                </button>
-                <button class="submit-button" onclick="submitJournal()">Submit</button>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Origami Flow</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../css/global.css" />
+        <link rel="stylesheet" href="../css/journals.css" />
+    </head>
+    <body>
+        <nav>
+            <div class="nav-left">
+                <img src="../assets/images/logo.svg" alt="Origami Flow logo" id="of-icon" />
             </div>
-        </div>
-    </main>
-    <script src="script.js"></script> </body>
+            <div class="nav-right">
+                <button class="account-icon">
+                    <img src="../assets/images/account.svg" alt="Profile picture" />
+                </button>
+            </div>
+        </nav>
+        <main>
+            <div class="progress-tracker">
+                <center>
+                    <img id="progress bar" src="../assets/images/progress tracker.svg" alt="Origami steps" />
+                </center>
+            </div>
+            <div class="journal-content">
+                <h1 class="title">What is causing your emotions right now?</h1>
+                <div class="text-area-container">
+                    <textarea id="journal-textbox" placeholder="type something here..." maxlength="250"></textarea>
+                    <span class="char-count">10/250</span>
+                </div>
+                <div class="voice-submit">
+                    <button class="voice-button">
+                        <img src="../assets/icons/microphone.svg" alt="Voice Input" />
+                        <span>Use Your Voice Instead</span>
+                    </button>
+                    <button class="submit-button" onclick="storeJournal('#journal-textbox')">Submit</button>
+                </div>
+            </div>
+        </main>
+        <script defer src="../js/script.js"></script>
+    </body>
 </html>
