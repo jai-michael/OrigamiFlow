@@ -1,32 +1,14 @@
 @import url(global.css);
 
-<<<<<<< Updated upstream
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-=======
-.progress-tracker {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.progress-tracker img {
-    height: 30px; /* Adjust as needed */
-    margin: 0 5px;
-}
-
-.prompt-header {
-    font-size: 1.8em;
-    margin-bottom: 20px;
->>>>>>> Stashed changes
 }
 
 .feelings-container {
     width: 100%;
-<<<<<<< Updated upstream
     display: flex;
     justify-content: center;
 }
@@ -48,41 +30,20 @@ main {
     background-color: #F8F5F2;
     border-radius: 30px;
     padding: 10px 10px 10px 50px;
-=======
-}
-
-.feelings-chips {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    width: 100%;
-}
-
-.feelings-chips button {
-    background-color: #e8e2dd;
-    border-radius: 20px;
-    padding: 10px 20px;
->>>>>>> Stashed changes
     cursor: pointer;
     text-align: left;
     display: flex;
     align-items: center;
-<<<<<<< Updated upstream
     width: 180px;
     height: 50px;
     font-size: 1.1em;
     position: relative;
     border: none;
     transition: background-color 0.3s ease; /* Added transition */
-=======
-    justify-content: flex-start;
->>>>>>> Stashed changes
 }
 
 .feelings-chips button::before {
     content: '+';
-<<<<<<< Updated upstream
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,10 +65,6 @@ main {
     background-color: #92B6E8; /* Change the background color here */
     transform: rotate(180deg);
     content: '-';
-=======
-    margin-right: 10px;
-    font-size: 1.2em;
->>>>>>> Stashed changes
 }
 
 #submit-mood {
