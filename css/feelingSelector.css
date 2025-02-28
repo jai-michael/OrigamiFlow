@@ -1,0 +1,86 @@
+@import url(global.css);
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.feelings-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.feelings-chips {
+    all: unset;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 40%;
+    justify-items: center;
+}
+
+.feelings-chips button {
+    background-color: #F8F5F2;
+    border-radius: 30px;
+    padding: 10px 10px 10px 50px;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    width: 180px;
+    height: 50px;
+    font-size: 1.1em;
+    position: relative;
+    border: none;
+    transition: background-color 0.3s ease; /* Added transition */
+}
+
+.feelings-chips button::before {
+    content: '+';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #A9BE65;
+    color: #4B332B;
+    position: absolute;
+    left: 5px;
+    transition: transform 0.3s ease, content 0.3s ease; /* Added transitions */
+}
+
+.feelings-chips button.selected { /* Added selected state */
+    background-color: #d1c9c3;
+}
+
+.feelings-chips button.selected::before {
+    background-color: #92B6E8; /* Change the background color here */
+    transform: rotate(180deg);
+    content: '-';
+}
+
+#submit-mood {
+    background-color: #4B332B;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 30px;
+    align-self: flex-end;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#submit-mood::after {
+    content: '✓';
+    margin-left: 10px;
+}
