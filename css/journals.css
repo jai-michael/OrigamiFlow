@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 /* journals.css */
 @import url(global.css);
+=======
+@import url(global.css);
+
+>>>>>>> Stashed changes
 .progress-tracker {
     margin-bottom: 40px;
 }
