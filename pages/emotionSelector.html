@@ -22,15 +22,15 @@
             </div>
         </nav>
         <main class="question-section">
-            <div class="progress-tracker">
-                <img id="fold-1" src="../assets/images/step_01.svg" alt="Origami step 1" />
-                <img id="fold-2" src="../assets/images/step_02.svg" alt="Origami step 2" />
-                <img id="fold-3" src="../assets/images/step_03.svg" alt="Origami step 3" />
-                <img id="fold-4" src="../assets/images/step_04.svg" alt="Origami step 4" />
-                <img id="fold-5" src="../assets/images/step_05.svg" alt="Origami step 5" />
-                <img id="fold-6" src="../assets/images/step_06.svg" alt="Origami step 6" />
-                <img id="fold-7" src="../assets/images/step_07.svg" alt="Origami step 7" />
-                <img id="fold-8" src="../assets/images/step_08.svg" alt="Origami step 8" />
+            <div class="progress-tracker" data-step-1>
+                <div><img id="fold-1" src="../assets/images/step_01.svg" alt="Origami step 1" /></div>
+                <div><img id="fold-2" src="../assets/images/step_02.svg" alt="Origami step 2" /></div>
+                <div><img id="fold-3" src="../assets/images/step_03.svg" alt="Origami step 3" /></div>
+                <div><img id="fold-4" src="../assets/images/step_04.svg" alt="Origami step 4" /></div>
+                <div><img id="fold-5" src="../assets/images/step_05.svg" alt="Origami step 5" /></div>
+                <div><img id="fold-6" src="../assets/images/step_06.svg" alt="Origami step 6" /></div>
+                <div><img id="fold-7" src="../assets/images/step_07.svg" alt="Origami step 7" /></div>
+                <div><img id="fold-8" src="../assets/images/step_08.svg" alt="Origami step 8" /></div>
             </div>
 
             <h2 class="prompt-header"></h2>
@@ -42,8 +42,9 @@
 
             <div class="emotion-selector">
                 <!-- UNFINISHED; need to figure out best way to implement -->
-                <button onclick="switchEmotion('next')">Next Emotion</button>
                 <button onclick="switchEmotion('back')">Previous Emotion</button>
+
+                <button onclick="switchEmotion('next')">Next Emotion</button>
             </div>
 
             <a href="" id="submit-mood"></a>

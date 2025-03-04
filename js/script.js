@@ -14,24 +14,25 @@ let fearEmotion = new Emotion("Afraid");
 
 let emotions = [happyEmotion, sadEmotion, angryEmotion, disgustEmotion, fearEmotion];
 
-let emotionSelector = 0;
 let questionElement = document.querySelector(".question-section");
 let emotionMessageElement = document.querySelector(".emotion-message");
 
+let emotionIndex = -1;
 function switchEmotion(direction) {
-    console.log(emotionSelector);
+    console.log(emotionIndex);
     if (direction == "next") {
-        emotionSelector += 1;
-        if (emotionSelector > emotions.length - 1) {
-            emotionSelector = 0;
+        emotionIndex += 1;
+        if (emotionIndex > emotions.length - 1) {
+            emotionIndex = 0;
         }
     } else if (direction == "back") {
-        emotionSelector -= 1;
-        if (emotionSelector < 0) {
-            emotionSelector = emotions.length - 1;
+        emotionIndex -= 1;
+        if (emotionIndex < 0) {
+            emotionIndex = emotions.length - 1;
         }
     }
-    let currentEmotion = emotions[emotionSelector];
+
+    let currentEmotion = emotions[emotionIndex];
 
     questionElement.style.background = `var(${currentEmotion.cssColor})`;
     emotionMessageElement.innerHTML = currentEmotion.phrase;
@@ -51,10 +52,10 @@ function readStorage(data) {
     return storedData;
 }
 
-// Journal Charactr counter
-journalTextarea = document.querySelector("#journal-textbox");
+// Journal Character counter
+journalTextArea = document.querySelector("#journal-textbox");
 jounralWordCount = document.querySelector("#character-amount");
-journalTextarea.addEventListener("input", event => {
-    const wordCount = journalTextarea.value.trim().split("").length;
+journalTextArea.addEventListener("input", event => {
+    const wordCount = journalTextArea.value.trim().split("").length;
     jounralWordCount.innerHTML = wordCount;
 });
