@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream
-/* journals.css */
-@import url(global.css);
-=======
 @import url(global.css);
 
->>>>>>> Stashed changes
 .progress-tracker {
     margin-bottom: 40px;
 }
@@ -70,8 +65,8 @@
 }
 
 .voice-button {
-    background-color: #eee;
-    color: #333;
+    background-color: #76675D;
+    color: #F8F5F2;
     display: flex;
     align-items: center;
     gap: 10px;
