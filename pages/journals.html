@@ -26,8 +26,8 @@
                     <img id="progress bar" src="../assets/images/progress tracker.svg" alt="Origami steps" />
                 </center>
             </div>
+            <h1 class="title">What is causing your emotions right now?</h1>
             <div class="journal-content">
-                <h1 class="title">What is causing your emotions right now?</h1>
                 <div class="text-area-container">
                     <textarea id="journal-textbox" placeholder="type something here..." maxlength="500"></textarea>
                     <p id="journal-word-counter"><span id="character-amount">0</span>/500</p>
@@ -37,9 +37,11 @@
                         <img src="../assets/icons/microphone.svg" alt="Voice Input" />
                         <span>Use Your Voice Instead</span>
                     </button>
-                    <button class="submit-button" onclick="storeJournal('#journal-textbox')">Submit</button>
                 </div>
             </div>
+        <div>
+            <button class="submit-button" onclick="storeJournal('#journal-textbox')">Submit</button>
+        </div>
         </main>
         <script defer src="../js/script.js"></script>
     </body>

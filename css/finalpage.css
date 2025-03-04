@@ -5,7 +5,9 @@ body {
     overflow: hidden;
     background-color: #E0D3C3;
     text-align: center;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: "Nunito";
+    src: url(../assets/fonts/Nunito-VariableFont_wght.ttf);
+    font-style: normal;
 }
 
 /* Title & Tagline Container */
@@ -27,7 +29,7 @@ body {
     text-decoration-thickness: 11.52px;
     text-underline-offset: 20px;
     text-underline-position: from-font;
-    margin: 0 0 80px 0;
+    margin: 0 0 60px 0;
 }
 
 /* Styling for the Centered Button */
@@ -63,7 +65,7 @@ body {
 #tagline {
     font-size: 1.2rem;
     color: #76675D;
-    margin-top: 15px; /* Ensure space between button and tagline */
+    margin-top: 5px; /* Ensure space between button and tagline */
     opacity: 0.8;
 }
 
