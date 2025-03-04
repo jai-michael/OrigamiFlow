@@ -55,7 +55,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     background-color: var(--secondary-bg);
     box-shadow: var(--general-shadow);
     height: 80vh;
@@ -85,5 +84,22 @@ nav {
     width: fit-content;
     border: var(--general-border);
     border-radius: 1000px;
+}
+
+.progress-tracker {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.progress-tracker div {
+    aspect-ratio: 1 / 1;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.progress-tracker[data-step] div {
+    background-color: #ffffff56;
 }
 /* ***************** */
