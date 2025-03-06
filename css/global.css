@@ -74,7 +74,18 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
     height: 10%;
+    padding: 5px;
+}
+
+nav div {
+    display: flex;
+    width: 50%;
+}
+
+.nav-right {
+    justify-content: end;
 }
 #of-icon {
     width: fit-content;
@@ -86,9 +97,9 @@ nav {
 }
 
 .account-icon img {
-    width: fit-content;
     border: var(--general-border);
     border-radius: 1000px;
+    height: 100%;
 }
 
 .progress-tracker {
