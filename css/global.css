@@ -93,17 +93,19 @@ nav {
 .progress-tracker {
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 5px;
 }
 .progress-tracker div {
     aspect-ratio: 1 / 1;
     height: 64px;
-
+    padding: 3px 8px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.progress-tracker[data-step] div {
-    background-color: #ffffff56;
+.progress-tracker div[current] {
+    background-color: #ffffff71;
+    border-radius: 15px;
+    border: var(--general-border);
 }
 /* ***************** */

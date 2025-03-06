@@ -7,7 +7,7 @@
         <title>Origami Flow</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="../css/global.css" />
+        <link rel="stylesheet" href="../css/emotionSelector.css" />
     </head>
     <body>
         <script src="../js/script.js" defer></script>
@@ -22,8 +22,8 @@
             </div>
         </nav>
         <main class="question-section">
-            <div class="progress-tracker" data-step-1>
-                <div><img id="fold-1" src="../assets/images/step_01.svg" alt="Origami step 1" /></div>
+            <div class="progress-tracker">
+                <div current><img id="fold-1" src="../assets/images/step_01.svg" alt="Origami step 1" /></div>
                 <div><img id="fold-2" src="../assets/images/step_02.svg" alt="Origami step 2" /></div>
                 <div><img id="fold-3" src="../assets/images/step_03.svg" alt="Origami step 3" /></div>
                 <div><img id="fold-4" src="../assets/images/step_04.svg" alt="Origami step 4" /></div>
@@ -42,9 +42,35 @@
 
             <div class="emotion-selector">
                 <!-- UNFINISHED; need to figure out best way to implement -->
-                <button onclick="switchEmotion('back')">Previous Emotion</button>
-
-                <button onclick="switchEmotion('next')">Next Emotion</button>
+                <button onclick="nextEmotion(-1)">Previous Emotion</button>
+                <div class="emotion-slider">
+                    <button onclick="switchEmotion(0)">
+                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                            <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" />
+                        </svg>
+                    </button>
+                    <button onclick="switchEmotion(1)">
+                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                            <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" />
+                        </svg>
+                    </button>
+                    <button onclick="switchEmotion(2)">
+                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                            <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" />
+                        </svg>
+                    </button>
+                    <button onclick="switchEmotion(3)">
+                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                            <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" />
+                        </svg>
+                    </button>
+                    <button onclick="switchEmotion(4)">
+                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                            <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" />
+                        </svg>
+                    </button>
+                </div>
+                <button onclick="nextEmotion(1)">Next Emotion</button>
             </div>
 
             <a href="" id="submit-mood"></a>
