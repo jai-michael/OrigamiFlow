@@ -77,6 +77,7 @@ body {
     height: 30%;
     background: linear-gradient(to bottom, #D2B59E, #EBD6BE);
     overflow: hidden;
+    left: 0;
 }
 
 /* Wave Animations */
