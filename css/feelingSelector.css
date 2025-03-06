@@ -67,20 +67,19 @@ main {
     content: '-';
 }
 
-#submit-mood {
-    background-color: #4B332B;
+.submit-button {
+    background-color: #4b332b;
     color: white;
-    padding: 15px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    margin-top: 30px;
     align-self: flex-end;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    margin-top: 20px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-#submit-mood::after {
-    content: '✓';
-    margin-left: 10px;
+.submit-button:hover {
+    background-color: #614735; /* Slightly lighter brown */
+    transform: scale(1.05); /* Slight lift on hover */
 }
