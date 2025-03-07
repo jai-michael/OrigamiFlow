@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="../css/emotionSelector.css" />
     </head>
     <body>
-        <script src="../js/script.js" defer></script>
         <nav>
             <div class="nav-left">
                 <img src="../assets/images/logo.svg" alt="Origami Flow icon" id="of-icon" />
@@ -45,35 +44,38 @@
                 <button onclick="nextEmotion(-1)">Previous Emotion</button>
                 <div class="emotion-slider">
                     <button onclick="switchEmotion(0)">
-                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
-                            <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <circle r="45" cx="50" cy="50" fill="var(--happy-color)" stroke="var(--primary-fg)" stroke-width="3" />
                         </svg>
                     </button>
                     <button onclick="switchEmotion(1)">
-                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
-                            <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <circle r="45" cx="50" cy="50" fill="var(--sad-color)" stroke="var(--primary-fg)" stroke-width="3" />
                         </svg>
                     </button>
                     <button onclick="switchEmotion(2)">
-                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
-                            <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <circle r="45" cx="50" cy="50" fill="var(--angry-color)" stroke="var(--primary-fg)" stroke-width="3" />
                         </svg>
                     </button>
                     <button onclick="switchEmotion(3)">
-                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
-                            <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <circle r="45" cx="50" cy="50" fill="var(--disgust-color)" stroke="var(--primary-fg)" stroke-width="3" />
                         </svg>
                     </button>
                     <button onclick="switchEmotion(4)">
-                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
-                            <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <circle r="45" cx="50" cy="50" fill="var(--afraid-color)" stroke="var(--primary-fg)" stroke-width="3" />
                         </svg>
                     </button>
                 </div>
                 <button onclick="nextEmotion(1)">Next Emotion</button>
             </div>
 
-            <a class= "submit-button" id="submit-mood"></a>
+            <button class="submit" id="submit-mood" onclick="documentPage.nextPrompt()">Submit</button>
         </main>
+
+        <script src="../js/script.js" defer></script>
+        <script src="../js/emotionSelector.js" defer></script>
     </body>
 </html>

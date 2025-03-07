@@ -2,6 +2,7 @@
     font-family: "Nunito";
     src: url(../assets/fonts/Nunito-VariableFont_wght.ttf);
     font-style: normal;
+    fon
 }
 
 @font-face {
@@ -123,7 +124,7 @@ nav div {
 }
 
 /* ***************** */
-.submit-button {
+.submit {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -133,12 +134,13 @@ nav div {
     padding: 20px 80px;
     border: none;
     border-radius: 3000000px;
+    font-family: "Nunito";
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
 }
 
-.submit-button:hover {
+.submit:hover {
     background-color: #614735; /* Slightly lighter brown */
     transform: scale(1.05); /* Slight lift on hover */
 }

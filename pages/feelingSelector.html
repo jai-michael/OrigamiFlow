@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Origami Flow</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../css/feelingSelector.css" />
-</head>
-<body>
-    <nav>
-        <div class="nav-left">
-            <img src="../assets/images/logo.svg" alt="Origami Flow logo" id="of-icon" />
-        </div>
-        <div class="nav-right">
-            <button class="account-icon">
-                <img src="../assets/images/account.jpg" alt="Profile picture" />
-            </button>
-        </div>
-    </nav>
-    <main>
-        <div class="progress-tracker">
-            <img id="fold-1" src="../assets/images/step_01.svg" alt="Origami step 1" />
-            <img id="fold-2" src="../assets/images/step_02.svg" alt="Origami step 2" />
-            <img id="fold-3" src="../assets/images/step_03.svg" alt="Origami step 3" />
-            <img id="fold-4" src="../assets/images/step_04.svg" alt="Origami step 4" />
-            <img id="fold-5" src="../assets/images/step_05.svg" alt="Origami step 5" />
-            <img id="fold-6" src="../assets/images/step_06.svg" alt="Origami step 6" />
-            <img id="fold-7" src="../assets/images/step_07.svg" alt="Origami step 7" />
-            <img id="fold-8" src="../assets/images/step_08.svg" alt="Origami step 8" />
-        </div>
-        <h1 class="prompt-header">How does your body feel today? </h1>
-        <div class="feelings-container">
-            <ul class="feelings-chips">
-                <li><button class="feeling-btn" data-selected="false">Weak</button></li>
-                <li><button class="feeling-btn" data-selected="false">Balanced</button></li>
-                <li><button class="feeling-btn" data-selected="false">Stiff</button></li>
-                <li><button class="feeling-btn" data-selected="false">Restless</button></li>
-                <li><button class="feeling-btn" data-selected="false">Numb</button></li>
-                <li><button class="feeling-btn" data-selected="false">Anxious</button></li>
-                <li><button class="feeling-btn" data-selected="false">Tense</button></li>
-                <li><button class="feeling-btn" data-selected="false">Energized</button></li>
-                <li><button class="feeling-btn" data-selected="false">Relaxed</button></li>
-                <li><button class="feeling-btn" data-selected="false">Excited</button></li>
-            </ul>
-        </div>
-        <a class="submit-button" id="submit-mood">Submit</a>
-    
-    </main>
-    <script src="../js/feeling.js" defer></script>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Origami Flow</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../css/feelingSelector.css" />
+    </head>
+    <body>
+        <nav>
+            <div class="nav-left">
+                <img src="../assets/images/logo.svg" alt="Origami Flow logo" id="of-icon" />
+            </div>
+            <div class="nav-right">
+                <button class="account-icon">
+                    <img src="../assets/images/account.jpg" alt="Profile picture" />
+                </button>
+            </div>
+        </nav>
+        <main>
+            <div class="progress-tracker">
+                <img id="fold-1" src="../assets/images/step_01.svg" alt="Origami step 1" />
+                <img id="fold-2" src="../assets/images/step_02.svg" alt="Origami step 2" />
+                <img id="fold-3" src="../assets/images/step_03.svg" alt="Origami step 3" />
+                <img id="fold-4" src="../assets/images/step_04.svg" alt="Origami step 4" />
+                <img id="fold-5" src="../assets/images/step_05.svg" alt="Origami step 5" />
+                <img id="fold-6" src="../assets/images/step_06.svg" alt="Origami step 6" />
+                <img id="fold-7" src="../assets/images/step_07.svg" alt="Origami step 7" />
+                <img id="fold-8" src="../assets/images/step_08.svg" alt="Origami step 8" />
+            </div>
+            <h1 class="title">How does your body feel today?</h1>
+            <div class="feelings-container">
+                <ul class="feelings-chips">
+                    <li><button class="feeling-btn" data-selected="false">Weak</button></li>
+                    <li><button class="feeling-btn" data-selected="false">Balanced</button></li>
+                    <li><button class="feeling-btn" data-selected="false">Stiff</button></li>
+                    <li><button class="feeling-btn" data-selected="false">Restless</button></li>
+                    <li><button class="feeling-btn" data-selected="false">Numb</button></li>
+                    <li><button class="feeling-btn" data-selected="false">Anxious</button></li>
+                    <li><button class="feeling-btn" data-selected="false">Tense</button></li>
+                    <li><button class="feeling-btn" data-selected="false">Energized</button></li>
+                    <li><button class="feeling-btn" data-selected="false">Relaxed</button></li>
+                    <li><button class="feeling-btn" data-selected="false">Excited</button></li>
+                </ul>
+            </div>
+            <button class="submit" id="submit-mood">Submit</button>
+        </main>
+        <script src="../js/feeling.js" defer></script>
+    </body>
 </html>

@@ -1,1 +1,25 @@
 @import url(global.css);
+
+.emotion-slider {
+    display: flex;
+    gap: 30px;
+}
+.emotion-slider button {
+    all: unset;
+    width: 70px;
+    height: 70px;
+}
+.emotion-slider button svg {
+    height: 100%;
+    width: 100%;
+}
+
+.emotion-selector > button {
+    all: unset;
+    background-color: var(--primary-fg);
+    color: var(--primary-bg);
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 10px 0;
+}
