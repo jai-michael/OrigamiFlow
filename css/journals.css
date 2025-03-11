@@ -59,6 +59,7 @@
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 .voice-button,
 position: absolute;
 bottom: 0;
@@ -90,6 +91,8 @@ cursor: pointer;
     font-weight: bold;
     cursor: pointer;
 =======
+=======
+>>>>>>> Stashed changes
 .voice-button {
     padding: 15px 30px;
     border: none;
