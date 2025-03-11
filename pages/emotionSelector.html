@@ -20,6 +20,7 @@
                 </button>
             </div>
         </nav>
+
         <main class="question-section">
             <div class="progress-tracker">
                 <div current><img id="fold-1" src="../assets/images/step_01.svg" alt="Origami step 1" /></div>
@@ -32,46 +33,50 @@
                 <div><img id="fold-8" src="../assets/images/step_08.svg" alt="Origami step 8" /></div>
             </div>
 
-            <h2 class="prompt-header"></h2>
+            <h1 class="title">How are you feeling today?</h1>
 
+            <!-- Emotion Display Section -->
             <div class="emotion-reaction">
-                <img src="" alt="" class="emotion-face" />
-                <h3 class="emotion-message"></h3>
+                <button class="arrow-button left-arrow" onclick="nextEmotion(-1)">&#9664;</button>
+                <div class="emotion-face-container">
+                    <img src="" alt="Emotion Icon" class="emotion-face" />
+                    <h3 class="emotion-message"></h3>
+                </div>
+                <button class="arrow-button right-arrow" onclick="nextEmotion(1)">&#9654;</button>
             </div>
 
+            <!-- Emotion Selector (Color Circle Buttons) -->
             <div class="emotion-selector">
-                <!-- UNFINISHED; need to figure out best way to implement -->
-                <button onclick="nextEmotion(-1)">Previous Emotion</button>
                 <div class="emotion-slider">
                     <button onclick="switchEmotion(0)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                            <circle r="45" cx="50" cy="50" fill="var(--happy-color)" stroke="var(--primary-fg)" stroke-width="3" />
+                            <circle r="45" cx="50" cy="50" fill="var(--happy-color)" stroke="white" stroke-width="10" />
                         </svg>
                     </button>
                     <button onclick="switchEmotion(1)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                            <circle r="45" cx="50" cy="50" fill="var(--sad-color)" stroke="var(--primary-fg)" stroke-width="3" />
+                            <circle r="45" cx="50" cy="50" fill="var(--sad-color)" stroke="white" stroke-width="10" />
                         </svg>
                     </button>
                     <button onclick="switchEmotion(2)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                            <circle r="45" cx="50" cy="50" fill="var(--angry-color)" stroke="var(--primary-fg)" stroke-width="3" />
+                            <circle r="45" cx="50" cy="50" fill="var(--angry-color)" stroke="white" stroke-width="10" />
                         </svg>
                     </button>
                     <button onclick="switchEmotion(3)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                            <circle r="45" cx="50" cy="50" fill="var(--disgust-color)" stroke="var(--primary-fg)" stroke-width="3" />
+                            <circle r="45" cx="50" cy="50" fill="var(--disgust-color)" stroke="white" stroke-width="10" />
                         </svg>
                     </button>
                     <button onclick="switchEmotion(4)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                            <circle r="45" cx="50" cy="50" fill="var(--afraid-color)" stroke="var(--primary-fg)" stroke-width="3" />
+                            <circle r="45" cx="50" cy="50" fill="var(--afraid-color)" stroke="white" stroke-width="10" />
                         </svg>
                     </button>
                 </div>
-                <button onclick="nextEmotion(1)">Next Emotion</button>
             </div>
 
+            <!-- Submit Button -->
             <button class="submit" id="submit-mood" onclick="documentPage.nextPrompt()">Submit</button>
         </main>
 

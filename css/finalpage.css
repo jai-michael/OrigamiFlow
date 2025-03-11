@@ -22,7 +22,7 @@ body {
 #title {
     color: #4B332B;
     font-family: Nunito;
-    font-size: 72px;
+    font-size: 100px;
     font-weight: 700;
     line-height: normal;
     text-decoration: underline wavy;
@@ -34,20 +34,18 @@ body {
 
 /* Styling for the Centered Button */
 .styled-button {
-    background-color: #4A3628; /* Dark brown color */
-    color: #FFFFFF; /* White text */
+    bottom: 0;
+    right: 0;
+    background-color: #4b332b;
+    color: white;
+    margin: 25px 40px 25px 25px;
+    padding: 20px 80px;
     border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-family: 'Arial', sans-serif;
-    border-radius: 50px; /* Fully rounded button */
+    border-radius: 3000000px;
+    font-family: "Nunito";
+    font-size: 24px;
+    font-weight: bold;
     cursor: pointer;
-    display: inline-flex; /* Keeps it inline and centered */
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 15px; /* Space between title and button */
 }
 
 /* Hover Effect */
@@ -63,10 +61,12 @@ body {
 
 /* Tagline Styling */
 #tagline {
-    font-size: 1.2rem;
     color: #76675D;
-    margin-top: 5px; /* Ensure space between button and tagline */
-    opacity: 0.8;
+    font-family: Nunito, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 /* Water Section */

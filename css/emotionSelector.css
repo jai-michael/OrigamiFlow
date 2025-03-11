@@ -1,25 +1,111 @@
 @import url(global.css);
 
-.emotion-slider {
-    display: flex;
-    gap: 30px;
-}
-.emotion-slider button {
-    all: unset;
-    width: 70px;
-    height: 70px;
-}
-.emotion-slider button svg {
-    height: 100%;
-    width: 100%;
+@import url(global.css);
+
+/* Title Styling */
+.title {
+    color: var(--primary-h1);
+    font-family: Nunito, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-.emotion-selector > button {
-    all: unset;
-    background-color: var(--primary-fg);
-    color: var(--primary-bg);
-    padding: 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    margin: 10px 0;
+/* Emotion Reaction Section */
+.emotion-reaction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
 }
+
+/* Face Container */
+.emotion-face-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Emotion Face */
+.emotion-face {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Emotion Text */
+.emotion-message {
+    color: #5A4033;
+    font-family: Nunito, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Arrow Buttons */
+.arrow-button {
+    all: unset;
+    font-size: 60px;
+    color: #5A4033;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s ease;
+}
+
+.arrow-button:hover {
+    transform: scale(1.2);
+}
+
+/* Positioning Arrows */
+.left-arrow {
+    margin-right: 10px;
+}
+
+.right-arrow {
+    margin-left: 10px;
+}
+
+/* Emotion Selector (Colored Circles) */
+.emotion-selector {
+    margin-top: 20px;
+}
+
+.emotion-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.emotion-slider button {
+    all: unset;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.emotion-slider button:hover {
+    transform: scale(1.1);
+}
+
+.emotion-slider button svg {
+    width: 100%;
+    height: 100%;
+}
+
+.color-option:nth-child(1) { background-color: var(--happy-color); }
+.color-option:nth-child(2) { background-color: var(--sad-color); }
+.color-option:nth-child(3) { background-color: var(--angry-color); }
+.color-option:nth-child(4) { background-color: var(--disgust-color); }
+.color-option:nth-child(5) { background-color: var(--afraid-color); }
+

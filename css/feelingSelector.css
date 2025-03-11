@@ -28,15 +28,18 @@ main {
 
 .feelings-chips button {
     background-color: #f8f5f2;
-    border-radius: 30px;
-    padding: 10px 10px 10px 50px;
+    border-radius: 1000px;
+    padding: 10px 10px 10px 90px;
     cursor: pointer;
     text-align: left;
     display: flex;
     align-items: center;
-    width: 180px;
-    height: 50px;
-    font-size: 1.1em;
+    width: 300px;
+    height: 80px;
+    color: var(--primary-h1);
+    font-family: Nunito, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
     position: relative;
     border: none;
     transition: background-color 0.3s ease; /* Added transition */
@@ -47,8 +50,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35px;
-    height: 35px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background-color: #a9be65;
     color: #4b332b;
@@ -59,7 +62,7 @@ main {
 
 .feelings-chips button.selected {
     /* Added selected state */
-    background-color: #d1c9c3;
+    background-color: #e7d2c4;
 }
 
 .feelings-chips button.selected::before {
