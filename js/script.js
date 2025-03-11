@@ -5,111 +5,64 @@ function sleep(ms) {
 class Page {
     constructor(prompts) {
         this._prompts = prompts; // Array
-        this._promptIndex = 0; // Number
-        this.buttonElement = document.querySelector(".submit"); // HTML Element <button.submit>
+        // this.promptIndex = undefined; // Number
+        this.buttonElement = document.querySelector(".submit");
+        // HTML Element <button.submit>
+        this.nextPrompt = undefined;
+        this.currentPrompt = undefined;
+        this.findPosition();
+        this.addOnClick();
+        this.setPrompt();
     }
 
-    // Provided value must be between 0 and the length of the array
-    set promptIndex(value) {
-        if (typeof value === "number" && value >= 0 && value < this._prompts.length) {
-            this._promptIndex = value;
-        } else {
-            console.error("Invalid prompt index");
-        }
-    }
-    // Get the value of _promptIndex
-    get promptIndex() {
-        return this._promptIndex;
-    }
-
-    // Get the value of _prompts
     get prompts() {
         return this._prompts;
     }
 
-    savePage() {
-        console.log(`Page being saved: ${JSON.stringify(this)}`);
-        localStorage.setItem("document-page", JSON.stringify(this));
+    set prompts(val) {
+        this._prompts = val;
+    }
+
+    findPosition() {
+        for (let i = 0; i < this._prompts.length; i++) {
+            let unsetNextPrompt = this._prompts[i];
+            console.log(unsetNextPrompt);
+            if (!unsetNextPrompt._completed()) {
+                // console.log("Running");
+                this.nextPrompt = unsetNextPrompt;
+
+                if (i - 1 < 0) {
+                    this.currentPrompt = "Home";
+                } else {
+                    this.currentPrompt = this._prompts[i - 1];
+                }
+
+                break;
+            }
+        }
     }
 
     addOnClick() {
-        this.buttonElement.onclick = this.nextPrompt();
+        this.buttonElement.onclick = function () {
+            if (this.nextPrompt) {
+                this.nextPage(this.nextPrompt.constructor.name);
+            } else {
+                console.log("Not Working");
+            }
+        }.bind(this);
     }
+    setPrompt() {
+        const currentPromptTitle = document.querySelector(".title");
 
-    async nextPage(page) {
-        console.log(`Next page: ${page}`);
-
-        switch (page) {
-            case "Journal":
-                console.log("NEXT JOURNAL PAGE FOUND");
-                this.savePage();
-                await sleep(105000);
-                window.location.href = "journals.html";
-            case "Feelings":
-                console.log("NEXT FEELINGS PAGE FOUND");
-                this.savePage();
-                await sleep(5000);
-
-                window.location.href = "feelingSelector.html";
-            case "Emotions":
-                console.log("NEXT EMOTIONS PAGE FOUND");
-                this.savePage();
-                await sleep(5000);
-
-                window.location.href = "emotionSelector.html";
-            default:
-                console.log("NOT WORKING");
-        }
-    }
-
-    nextPrompt() {
-        // Get the current Prompt Object before we go to the next
-        const currentPrompt = this._prompts[this.promptIndex];
-
-        console.log("Running Next Prompt...\n Current Prompt:");
-        console.log(currentPrompt);
-        console.log(this.promptIndex);
-        // Increase the promptIndex by 1, if its outside the prompts array, start back at 0 (the beginning)
-        this.promptIndex = this.promptIndex + 1;
-
-        if (this.promptIndex >= this._prompts.length) {
-            this.promptIndex = 0;
-        }
-        console.log(this.promptIndex);
-        // Get the next Prompt Object (the prompt ahead of our current prompt)
-        const nextPrompt = this._prompts[this.promptIndex];
-        console.log(nextPrompt);
-
-        // If the next prompt is the same type, just change the page content,
-        // If it is a different type, change the page and the content.
-        if (currentPrompt.constructor.name == nextPrompt.constructor.name) {
-            console.log("Running Change Prompt");
-            this.changePrompt(nextPrompt, nextPrompt.constructor.name);
-            this.buttonElement.onclick = this.changePrompt();
-        } else {
-            console.log("Running Next Page");
-            // console.log(nextPrompt.constructor.name);
-            this.nextPage(nextPrompt.constructor.name);
-        }
-    }
-
-    previousPrompt() {
-        this.promptIndex -= 1;
-        if (this.promptIndex < 0) {
-            this.promptIndex = prompts.length - 1;
-        }
-    }
-
-    changePrompt(prompt, promptType) {
-        const promptTitleElement = document.querySelector(".title");
-
-        switch (promptType) {
+        const currentPromptType = this.currentPrompt.constructor.name;
+        console.log(currentPromptTitle);
+        switch (currentPromptType) {
             // Change page contnet for journals.html
             case "Journal":
                 const journalTextArea = document.querySelector("#journal-textbox");
 
                 // Change Journal Prompt
-                promptTitleElement.innerHTML = prompt.title;
+                currentPromptTitle.innerHTML = this.currentPrompt.title;
 
                 // Reset Journal's text area to blank
                 journalTextArea.value = "";
@@ -118,11 +71,67 @@ class Page {
             case "Feelings":
                 const feelingsChips = document.querySelectorAll(".feeling-btn");
 
-                promptTitleElement.innerHTML = prompt.title;
+                currentPromptTitle.innerHTML = this.currentPrompt.title;
 
                 feelingsChips.forEach(function (chip, index) {
                     chip.innerHTML = prompt.feelings[index];
                 });
+            case "Emotions":
+                currentPromptTitle.innerHTML = this.currentPrompt.title;
+        }
+    }
+
+    nextPrompt() {
+        // // Get the current Prompt Object before we go to the next
+        // const currentPrompt = this.prompts[this.promptIndex];
+        // // Increase the promptIndex by 1, if its outside the prompts array, start back at 0 (the beginning)
+        // this.promptIndex = this.promptIndex + 1;
+        // if (this.promptIndex >= this.prompts.length) {
+        //     this.promptIndex = 0;
+        // }
+        // // Get the next Prompt Object (the prompt ahead of our current prompt)
+        // // this.saveIndex();
+        // const nextPrompt = this.prompts[this.promptIndex];
+        // // If the next prompt is the same type, just change the page content,
+        // // If it is a different type, change the page and the content.
+        // if (currentPrompt.constructor.name == nextPrompt.constructor.name) {
+        //     this.buttonElement.onclick = this.nextPrompt();
+        // } else {
+        //     this.nextPage(nextPrompt.constructor.name);
+        // }
+    }
+
+    // previousPrompt() {
+    //     this.promptIndex -= 1;
+    //     if (this.promptIndex < 0) {
+    //         this.promptIndex = prompts.length - 1;
+    //     }
+    // }
+
+    async nextPage(page) {
+        console.log(`Next page: ${page}`);
+        // if (this.currentPrompt != "Home") {
+        //     this.currentPrompt.markCompleted();
+        // }
+        // await sleep(5000)
+        this.nextPrompt.markCompleted();
+        console.log(this.nextPrompt);
+        // await sleep(5000);
+        switch (page) {
+            case "Journal":
+                console.log("NEXT JOURNAL PAGE FOUND");
+                await sleep(10000);
+                window.location.href = `${window.location.origin}/pages/journals.html`;
+            case "Feelings":
+                console.log("NEXT FEELINGS PAGE FOUND");
+                await sleep(10000);
+                window.location.href = `${window.location.origin}/pages/feelingSelector.html`;
+            case "Emotions":
+                console.log("NEXT EMOTIONS PAGE FOUND");
+                await sleep(10000);
+                window.location.href = `${window.location.origin}/pages/emotionSelector.html`;
+            default:
+                console.log("NOT WORKING");
         }
     }
 }
@@ -130,6 +139,26 @@ class Page {
 class Prompt {
     constructor(title) {
         this.title = title;
+        this.slug = title // Removes spaces and special characters, replaces spaces with dashes
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9\s-]/g, "")
+            .replace(/\s+/g, "-")
+            .replace(/--+/g, "-");
+
+        this._completed = function () {
+            // A function to check the storage and see if it has been marked completed
+            const completed = sessionStorage.getItem(`${this.slug}-completed`);
+            if (completed == "true") {
+                return true;
+            } else return false;
+        };
+    }
+    markCompleted() {
+        // A function that marks the promp completed in storage
+        console.log("Marking Prompt Complete");
+        // this._completed = bool;
+        sessionStorage.setItem(`${this.slug}-completed`, true);
     }
 }
 
@@ -189,11 +218,13 @@ const PROMPT_ORDER = [emotionPrompt, journalPrompt1, feelingsPrompt1, feelingsPr
 
 // Document Page Object variable; restored from user's cache even if pages change.
 const fetchPage = function () {
-    if (localStorage.getItem("document-page" !== null)) {
-        return JSON.parse(localStorage.getItem("document-page"));
-    } else return new Page(PROMPT_ORDER);
+    if (sessionStorage.getItem("document-page") !== null) {
+        console.log("---- FOUND PREVIOUS PAGE OBJECT ----");
+        const previousPage = JSON.parse(sessionStorage.getItem("document-page"));
+        return new Page(PROMPT_ORDER, previousPage._promptIndex);
+    } else return new Page(PROMPT_ORDER, 0);
 };
-const documentPage = fetchPage();
+const documentPage = new Page(PROMPT_ORDER);
 // documentPage.savePage();
 // documentPage.addOnClick();
 //////////////////
