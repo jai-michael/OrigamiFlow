@@ -25,17 +25,15 @@ class Page {
 
     findPosition() {
         for (let i = 0; i < this._prompts.length; i++) {
-            let unsetNextPrompt = this._prompts[i];
-            console.log(unsetNextPrompt);
-            if (!unsetNextPrompt._completed()) {
-                // console.log("Running");
-                this.nextPrompt = unsetNextPrompt;
+            if (i + 1 >= this._prompts.length) {
+                this.nextPrompt = "End";
+            } else this.nextPrompt = this._prompts[i + 1];
 
-                if (i - 1 < 0) {
-                    this.currentPrompt = "Home";
-                } else {
-                    this.currentPrompt = this._prompts[i - 1];
-                }
+            console.log(this.nextPrompt);
+
+            if (!this._prompts[i]._completed()) {
+                // console.log("Running");
+                this.currentPrompt = this._prompts[i];
 
                 break;
             }
@@ -44,10 +42,10 @@ class Page {
 
     addOnClick() {
         this.buttonElement.onclick = function () {
-            if (this.nextPrompt) {
+            if (this.nextPrompt != "End") {
                 this.nextPage(this.nextPrompt.constructor.name);
             } else {
-                console.log("Not Working");
+                this.nextPage("End");
             }
         }.bind(this);
     }
@@ -74,64 +72,39 @@ class Page {
                 currentPromptTitle.innerHTML = this.currentPrompt.title;
 
                 feelingsChips.forEach(function (chip, index) {
-                    chip.innerHTML = prompt.feelings[index];
+                    chip.innerHTML = this.currentPrompt.feelings[index];
                 });
             case "Emotions":
                 currentPromptTitle.innerHTML = this.currentPrompt.title;
         }
     }
 
-    nextPrompt() {
-        // // Get the current Prompt Object before we go to the next
-        // const currentPrompt = this.prompts[this.promptIndex];
-        // // Increase the promptIndex by 1, if its outside the prompts array, start back at 0 (the beginning)
-        // this.promptIndex = this.promptIndex + 1;
-        // if (this.promptIndex >= this.prompts.length) {
-        //     this.promptIndex = 0;
-        // }
-        // // Get the next Prompt Object (the prompt ahead of our current prompt)
-        // // this.saveIndex();
-        // const nextPrompt = this.prompts[this.promptIndex];
-        // // If the next prompt is the same type, just change the page content,
-        // // If it is a different type, change the page and the content.
-        // if (currentPrompt.constructor.name == nextPrompt.constructor.name) {
-        //     this.buttonElement.onclick = this.nextPrompt();
-        // } else {
-        //     this.nextPage(nextPrompt.constructor.name);
-        // }
-    }
-
-    // previousPrompt() {
-    //     this.promptIndex -= 1;
-    //     if (this.promptIndex < 0) {
-    //         this.promptIndex = prompts.length - 1;
-    //     }
-    // }
-
-    async nextPage(page) {
+    nextPage(page) {
         console.log(`Next page: ${page}`);
-        // if (this.currentPrompt != "Home") {
-        //     this.currentPrompt.markCompleted();
-        // }
-        // await sleep(5000)
-        this.nextPrompt.markCompleted();
-        console.log(this.nextPrompt);
-        // await sleep(5000);
+
+        this.currentPrompt.markCompleted();
+
+        // console.log(this.nextPrompt);
+
         switch (page) {
             case "Journal":
                 console.log("NEXT JOURNAL PAGE FOUND");
-                await sleep(10000);
                 window.location.href = `${window.location.origin}/pages/journals.html`;
+                break;
             case "Feelings":
                 console.log("NEXT FEELINGS PAGE FOUND");
-                await sleep(10000);
                 window.location.href = `${window.location.origin}/pages/feelingSelector.html`;
+                break;
             case "Emotions":
                 console.log("NEXT EMOTIONS PAGE FOUND");
-                await sleep(10000);
                 window.location.href = `${window.location.origin}/pages/emotionSelector.html`;
+                break;
+            case "End":
+                window.location.href = `${window.location.origin}/pages/finalpage.html`;
+                break;
             default:
                 console.log("NOT WORKING");
+                break;
         }
     }
 }
@@ -211,7 +184,7 @@ const feelings1 = ["Weak", "Stiff", "Numb", "Tense", "Relaxed", "Balanced", "Res
 const feelingsPrompt1 = new Feelings("How does your body feel today?", feelings1);
 
 const feelings2 = ["Creatively", "Verbally", "Physically", "Quietly", "Logically", "Emotionally", "Culturally", "Socially", "Musically", "Playfully"];
-const feelingsPrompt2 = new Feelings("How does your body feel today?", feelings2);
+const feelingsPrompt2 = new Feelings("How do you want to express yourself right now?", feelings2);
 
 // ORDER OF PROMPTS/PAGES; Do NOT mutate this list with any methods/functions.
 const PROMPT_ORDER = [emotionPrompt, journalPrompt1, feelingsPrompt1, feelingsPrompt2, journalPrompt2, journalPrompt3, journalPrompt4];
