@@ -1,5 +1,6 @@
-@import url(global.css);
+@import url(global.css); /* Import global styles for consistency */
 
+/* Centers content and ensures proper alignment */
 main {
     display: flex;
     flex-direction: column;
@@ -7,12 +8,14 @@ main {
     justify-content: flex-start;
 }
 
+/* Centers the feelings selection container */
 .feelings-container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
+/* Grid layout for arranging feeling buttons in two columns */
 .feelings-chips {
     all: unset;
     width: 50%;
@@ -26,6 +29,7 @@ main {
     justify-items: center;
 }
 
+/* Button styling for feeling selection */
 .feelings-chips button {
     background-color: #f8f5f2;
     border-radius: 1000px;
@@ -45,6 +49,7 @@ main {
     transition: background-color 0.3s ease; /* Added transition */
 }
 
+/* Circular icon inside the button (default state: "+") */
 .feelings-chips button::before {
     content: "+";
     display: flex;
@@ -60,11 +65,13 @@ main {
     transition: transform 0.3s ease, content 0.3s ease; /* Added transitions */
 }
 
+/* Selected state for buttons */
 .feelings-chips button.selected {
     /* Added selected state */
     background-color: #e7d2c4;
 }
 
+/* Changes icon and rotates when selected */
 .feelings-chips button.selected::before {
     background-color: #92b6e8; /* Change the background color here */
     transform: rotate(180deg);

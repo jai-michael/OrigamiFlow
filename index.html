@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
+        <meta charset="UTF-8" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <!-- Page Title -->
         <title>Origami Flow</title>
-        <link rel="stylesheet" href="./css/global.css" />
-        <link rel="stylesheet" href="./css/homestyles.css" />
+        
+        <!-- External Stylesheets -->
+        <link rel="stylesheet" href="./css/global.css" /> <!-- Global styles for the website -->
+        <link rel="stylesheet" href="./css/homestyles.css" /> <!-- Homepage-specific styles -->
     </head>
+    
     <body>
+        <!-- Navigation Bar -->
         <nav>
+            <!-- Left side: Logo -->
             <div class="nav-left">
                 <img src="../assets/images/logo.svg" alt="Origami Flow logo" id="of-icon" />
             </div>
+            
+            <!-- Right side: Profile Picture -->
             <div class="nav-right">
                 <button class="account-icon">
                     <img src="../assets/images/account.jpg" alt="Profile picture" />
@@ -19,24 +28,32 @@
             </div>
         </nav>
 
+        <!-- Decorative Boat Images at the Top -->
         <div class="top-boats">
             <img src="./assets/images/boat 1.png" class="boat top-left" alt="Boat 1" />
             <img src="./assets/images/boat 2.png" class="boat top-right" alt="Boat 2" />
         </div>
 
+        <!-- Main Content Section -->
         <div class="centered-content">
-            <h1 class="title">Origami Flow</h1>
-            <p class="description">A connective journaling app dedicated to helping children build the proper emotional management skills.</p>
-            <a class="button" href="pages/emotionSelector.html">Start Journaling</a>
+            <h1 class="title">Origami Flow</h1> <!-- Main Title -->
+            <p class="description">
+                A connective journaling app dedicated to helping children build the proper emotional management skills.
+            </p> <!-- Short description of the app -->
+            
+            <!-- Call-to-Action Button -->
+            <a class="button" href="pages/emotionSelector.html">Start Journaling</a> <!-- Redirects user to emotion selector page -->
         </div>
 
+        <!-- Decorative Boat Images at the Bottom -->
         <div class="bottom-boats">
             <img src="./assets/images/boat 3.png" class="boat bottom-left" alt="Boat 3" />
             <img src="./assets/images/boat 4.png" class="boat bottom-right" alt="Boat 4" />
         </div>
 
+        <!-- JavaScript -->
         <script defer>
-            sessionStorage.clear();
+            sessionStorage.clear(); // Clears session storage when the page loads (to reset any saved state)
         </script>
     </body>
 </html>
