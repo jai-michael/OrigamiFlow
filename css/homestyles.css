@@ -1,45 +1,51 @@
-@import url(global.css);
+@import url(global.css); /* Import global styles for consistent theming */
 
+/* General Body Styling */
 body {
-    margin: 0;
-    overflow: hidden;
-    background: url("../assets/images/water\ bg.png") no-repeat center center/cover;
-    height: 100vh;
+    margin: 0; /* Removes default margin */
+    overflow: hidden; /* Prevents scrolling */
+    background: url("../assets/images/water\ bg.png") no-repeat center center/cover; /* Fullscreen water background */
+    height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: sans-serif;
 }
 
+/* Boat Containers (Top and Bottom) */
 .top-boats, .bottom-boats {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Positions boats at opposite ends */
     padding-right: 50px;
     box-sizing: border-box;
 }
 
+/* Top Boat Section */
 .top-boats {
     position: absolute;
     top: 0;
     left: 0;
     padding-left: 50px;
-    margin-top: 100px;
+    margin-top: 100px; /* Adds spacing from the top */
 }
 
+/* Bottom Boat Section */
 .bottom-boats {
     position: absolute;
     bottom: 0;
     left: 0;
     padding-left: 50px;
-    z-index: -99999;
+    z-index: -99999; /* Moves it far behind other elements */
 }
 
+/* Boat Styling */
 .boat {
     width: 280px;
-    transform-origin: 50% 90%;
+    transform-origin: 50% 90%; /* Sets rotation pivot */
 }
 
+/* Boat Animations */
 .top-left {
     animation: rock0 3s infinite ease-in-out alternate;
 }
@@ -56,6 +62,7 @@ body {
     animation: rock3 3s infinite ease-in-out alternate;
 }
 
+/* Centers the Main Content */
 .centered-content {
     display: flex;
     flex-direction: column;
@@ -65,23 +72,21 @@ body {
     text-align: center;
 }
 
+/* Main Title Styling */
 .title {
     color: #4B332B;
     font-family: Nunito;
     font-size: 100px;
     font-weight: 700;
-    line-height: normal;
-    text-decoration: underline wavy;
+    text-decoration: underline wavy; /* Wavy underline effect */
     text-decoration-thickness: 11.52px;
     text-underline-offset: 20px;
-    text-underline-position: from-font;
     margin: 0 0 80px 0;
 }
 
+/* Description Text Styling */
 .description {
-    width: 536px;
-    line-height: normal;
-    margin: 0 0 100px 0;
+    width: 536px; /* Fixed width for readability */
     color: #76675D;
     font-family: Nunito, sans-serif;
     font-size: 30px;
@@ -90,27 +95,26 @@ body {
     text-align: center;
 }
 
+/* Call-to-Action Button */
 .button {
-    position: center;
-    bottom: 0;
-    right: 0;
     background-color: #4b332b;
     color: white;
-    margin: 25px 40px 25px 25px;
     padding: 20px 80px;
     border: none;
-    border-radius: 3000000px;
+    border-radius: 50px; /* Makes it pill-shaped */
     font-family: "Nunito";
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
 }
 
+/* Button Hover Effect */
 .button:hover {
     background-color: #614735; /* Slightly darker brown */
-    transform: scale(1.05); /* Slight lift on hover */
+    transform: scale(1.05); /* Subtle lift effect */
 }
 
+/* Boat Rocking Animations */
 @keyframes rock0 {
     0% { transform: translateY(0) rotate(-8deg); }
     100% { transform: translateY(-5px) rotate(8deg); }

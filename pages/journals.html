@@ -2,25 +2,37 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Ensures compatibility with older versions of Internet Explorer -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+        <meta name="description" content="" /> <!-- Placeholder for SEO description -->
+
+        <!-- Page Title -->
         <title>Origami Flow</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="../css/global.css" />
-        <link rel="stylesheet" href="../css/journals.css" />
+
+        <!-- External Stylesheets -->
+        <link rel="stylesheet" href="../css/global.css" /> <!-- Global styles shared across pages -->
+        <link rel="stylesheet" href="../css/journals.css" /> <!-- Specific styles for the journal page -->
     </head>
+    
     <body>
+        <!-- Navigation Bar -->
         <nav>
+            <!-- Left Side: Logo -->
             <div class="nav-left">
                 <img src="../assets/images/logo.svg" alt="Origami Flow logo" id="of-icon" />
             </div>
+            
+            <!-- Right Side: Profile Picture -->
             <div class="nav-right">
                 <button class="account-icon">
                     <img src="../assets/images/account.jpg" alt="Profile picture" />
                 </button>
             </div>
         </nav>
+
+        <!-- Main Content Section -->
         <main>
+            <!-- Progress Tracker: Displays the steps of the journaling process -->
             <div class="progress-tracker">
                 <div current><img id="fold-1" src="../assets/images/step_01.svg" alt="Origami step 1" /></div>
                 <div><img id="fold-2" src="../assets/images/step_02.svg" alt="Origami step 2" /></div>
@@ -32,12 +44,22 @@
                 <div><img id="fold-8" src="../assets/images/step_08.svg" alt="Origami step 8" /></div>
             </div>
 
+            <!-- Journal Prompt -->
             <h1 class="title">What is causing your emotions right now?</h1>
+
+            <!-- Journal Input Section -->
             <div class="journal-content">
                 <div class="text-area-container">
-                    <textarea id="journal-textbox" placeholder="type something here..." maxlength="500"></textarea>
-                    <p id="journal-word-counter"><span id="character-amount">0</span>/500</p>
+                    <!-- Text Input Box for Journaling -->
+                    <textarea id="journal-textbox" placeholder="Type something here..." maxlength="500"></textarea>
+                    
+                    <!-- Word Counter Display -->
+                    <p id="journal-word-counter">
+                        <span id="character-amount">0</span>/500
+                    </p>
                 </div>
+
+                <!-- Voice Input Button -->
                 <div class="voice-submit">
                     <button class="voice-button">
                         <img src="../assets/icons/microphone.svg" alt="Voice Input" />
@@ -45,11 +67,15 @@
                     </button>
                 </div>
             </div>
+
+            <!-- Next Button -->
             <div>
                 <button class="submit" onclick="documentPage.nextPrompt()">Next</button>
             </div>
         </main>
-        <script defer src="../js/script.js"></script>
-        <script defer src="../js/journals.js"></script>
+
+        <!-- JavaScript Scripts -->
+        <script defer src="../js/script.js"></script> <!-- General scripts -->
+        <script defer src="../js/journals.js"></script> <!-- Journal-specific logic -->
     </body>
 </html>

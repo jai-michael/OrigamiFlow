@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charset="utf-8" /> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Ensures compatibility with older versions of Internet Explorer -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+        <meta name="description" content="" /> <!-- Placeholder for SEO description -->
+
+        <!-- Page Title -->
         <title>Origami Flow</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="../css/emotionSelector.css" />
+
+        <!-- External Stylesheets -->
+        <link rel="stylesheet" href="../css/emotionSelector.css" /> <!-- Styles specific to the emotion selector page -->
     </head>
+    
     <body>
+        <!-- Navigation Bar -->
         <nav>
+            <!-- Left Side: Logo -->
             <div class="nav-left">
                 <img src="../assets/images/logo.svg" alt="Origami Flow icon" id="of-icon" />
             </div>
+            
+            <!-- Right Side: Profile Picture -->
             <div class="nav-right">
                 <button class="account-icon">
                     <img src="../assets/images/account.jpg" alt="Profile Picture" />
@@ -21,7 +29,9 @@
             </div>
         </nav>
 
+        <!-- Main Content Section -->
         <main class="question-section">
+            <!-- Progress Tracker: Displays the steps of the journaling process -->
             <div class="progress-tracker">
                 <div current><img id="fold-1" src="../assets/images/step_01.svg" alt="Origami step 1" /></div>
                 <div><img id="fold-2" src="../assets/images/step_02.svg" alt="Origami step 2" /></div>
@@ -33,42 +43,58 @@
                 <div><img id="fold-8" src="../assets/images/step_08.svg" alt="Origami step 8" /></div>
             </div>
 
+            <!-- Question Prompt -->
             <h1 class="title">How are you feeling today?</h1>
 
             <!-- Emotion Display Section -->
             <div class="emotion-reaction">
+                <!-- Left Arrow Button for Changing Emotion -->
                 <button class="arrow-button left-arrow" onclick="nextEmotion(-1)">&#9664;</button>
+
+                <!-- Emotion Face and Description -->
                 <div class="emotion-face-container">
                     <img src="../assets/icons/faces/face_placeholder.svg" alt="Emotion Icon" class="emotion-face" />
                     <h3 class="emotion-message">Pick an emotion from the tracker</h3>
                 </div>
+
+                <!-- Right Arrow Button for Changing Emotion -->
                 <button class="arrow-button right-arrow" onclick="nextEmotion(1)">&#9654;</button>
+
                 <h3 class="title"></h3>
             </div>
 
             <!-- Emotion Selector (Color Circle Buttons) -->
             <div class="emotion-selector">
                 <div class="emotion-slider">
+                    <!-- Happy Emotion -->
                     <button onclick="switchEmotion(0)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                             <circle r="45" cx="50" cy="50" fill="var(--happy-color)" stroke="white" stroke-width="10" />
                         </svg>
                     </button>
+
+                    <!-- Sad Emotion -->
                     <button onclick="switchEmotion(1)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                             <circle r="45" cx="50" cy="50" fill="var(--sad-color)" stroke="white" stroke-width="10" />
                         </svg>
                     </button>
+
+                    <!-- Angry Emotion -->
                     <button onclick="switchEmotion(2)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                             <circle r="45" cx="50" cy="50" fill="var(--angry-color)" stroke="white" stroke-width="10" />
                         </svg>
                     </button>
+
+                    <!-- Disgusted Emotion -->
                     <button onclick="switchEmotion(3)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                             <circle r="45" cx="50" cy="50" fill="var(--disgust-color)" stroke="white" stroke-width="10" />
                         </svg>
                     </button>
+
+                    <!-- Afraid Emotion -->
                     <button onclick="switchEmotion(4)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                             <circle r="45" cx="50" cy="50" fill="var(--afraid-color)" stroke="white" stroke-width="10" />
@@ -81,7 +107,8 @@
             <button class="submit" id="submit-mood">Next</button>
         </main>
 
-        <script src="../js/script.js" defer></script>
-        <script src="../js/emotionSelector.js" defer></script>
+        <!-- JavaScript Scripts -->
+        <script src="../js/script.js" defer></script> <!-- General scripts -->
+        <script src="../js/emotionSelector.js" defer></script> <!-- Emotion selector logic -->
     </body>
 </html>

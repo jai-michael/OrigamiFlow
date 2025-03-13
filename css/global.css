@@ -1,3 +1,4 @@
+/* Import Nunito font in both normal and italic styles */
 @font-face {
     font-family: "Nunito";
     src: url(../assets/fonts/Nunito-VariableFont_wght.ttf);
@@ -10,16 +11,17 @@
     font-style: italic;
 }
 
-/* Global styles for the entire html document scope */
+/* Global styles applied to the entire document */
 :root {
-    /* CSS Variables/Properties used for common styles i.e: colors */
+    /* Primary and Secondary Background Colors */
     --primary-bg: hsla(30, 30%, 96%, 1);
     --secondary-bg: hsla(25, 67%, 87%, 1);
 
+    /* Text Colors */
     --primary-fg: hsla(24, 12%, 41%, 1);
     --primary-h1: hsla(16, 27%, 23%, 1);
 
-    /* Emotions colors */
+    /* Emotion Colors */
     --happy-color: hsla(74, 41%, 57%, 1);
     --happy-color-light: hsla(74, 61%, 78%, 1);
 
@@ -35,19 +37,23 @@
     --disgust-color: hsla(262, 92%, 77%, 1);
     --disgust-color-light: hsla(263, 100%, 84%, 1);
 
+    /* Box Shadow and Border for UI Components */
     --general-shadow: 0px 1px 20px 0px hsla(24, 12%, 41%, 0.2);
-
     --general-border: 3px solid hsla(24, 27%, 23%, 0.08);
 }
 
+/* Ensures full height and resets margin */
 html {
     margin: 0;
     min-height: 100%;
 }
 
+/* Applies box-sizing to all elements */
 * {
     box-sizing: border-box;
 }
+
+/* Base styles for the body */
 body {
     font-family: "Nunito", sans-serif;
     padding: 15px;
@@ -56,6 +62,7 @@ body {
     height: 100vh;
 }
 
+/* Main container styling */
 main {
     display: flex;
     position: relative;
@@ -70,7 +77,7 @@ main {
     height: 90%;
 }
 
-/* Navigation Header */
+/* Navigation Bar */
 nav {
     display: flex;
     flex-direction: row;
@@ -80,34 +87,44 @@ nav {
     padding: 5px;
 }
 
+/* Navigation container styles */
 nav div {
     display: flex;
     width: 50%;
 }
 
+/* Aligns the profile section to the right */
 .nav-right {
     justify-content: end;
 }
+
+/* Ensures the logo fits properly */
 #of-icon {
     width: fit-content;
 }
+
+/* Profile icon button */
 .account-icon {
     all: unset;
     cursor: pointer;
     height: 100%;
 }
 
+/* Profile picture inside the button */
 .account-icon img {
     border: var(--general-border);
     border-radius: 1000px;
     height: 100%;
 }
 
+/* Progress Tracker Styles */
 .progress-tracker {
     display: flex;
     flex-direction: row;
     gap: 5px;
 }
+
+/* Each step in the progress tracker */
 .progress-tracker div {
     aspect-ratio: 1 / 1;
     height: 64px;
@@ -116,13 +133,15 @@ nav div {
     align-items: center;
     justify-content: center;
 }
+
+/* Highlights the current step in the progress tracker */
 .progress-tracker div[current] {
     background-color: #ffffff71;
     border-radius: 15px;
     border: var(--general-border);
 }
 
-/* ***************** */
+/* Submit Button */
 .submit {
     position: absolute;
     bottom: 0;
@@ -132,13 +151,14 @@ nav div {
     margin: 25px 40px 25px 25px;
     padding: 20px 80px;
     border: none;
-    border-radius: 3000000px;
+    border-radius: 50px; /* Proper rounded button */
     font-family: "Nunito";
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
 }
 
+/* Submit Button Hover Effect */
 .submit:hover {
     background-color: #614735; /* Slightly lighter brown */
     transform: scale(1.05); /* Slight lift on hover */
