@@ -91,6 +91,7 @@ body {
 }
 
 .button {
+    position: center;
     bottom: 0;
     right: 0;
     background-color: #4b332b;
