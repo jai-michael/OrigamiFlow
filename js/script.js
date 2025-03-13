@@ -1,19 +1,17 @@
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
+// Page class manages the navigation and prompt handling
 class Page {
     constructor(prompts) {
-        this._prompts = prompts; // Array
-        // this.promptIndex = undefined; // Number
-        this.buttonElement = document.querySelector(".submit");
-        // HTML Element <button.submit>
+        this._prompts = prompts; // Array of prompt objects
+        this.buttonElement = document.querySelector(".submit"); // Submit button element
+
+        // All the following properties start out as undefined as to not be read until the starting functions set each value manually.
         this.nextPrompt = undefined;
         this.currentPrompt = undefined;
         this.promptIndex = undefined;
-        this.findPosition();
-        this.addOnClick();
-        this.setPrompt();
+
+        this.findPosition(); // Determine the current prompt position
+        this.addOnClick(); // Add event listener for button click
+        this.setPrompt(); // Initialize the prompt display
     }
 
     get prompts() {
@@ -24,23 +22,28 @@ class Page {
         this._prompts = val;
     }
 
+    // Finds the first unfinished prompt in the list and sets it as the current prompt.
     findPosition() {
         for (let i = 0; i < this._prompts.length; i++) {
+            // Determine the next prompt or mark it as "End" if none are left
             if (i + 1 >= this._prompts.length) {
                 this.nextPrompt = "End";
-            } else this.nextPrompt = this._prompts[i + 1];
+            } else {
+                this.nextPrompt = this._prompts[i + 1];
+            }
 
             console.log(this.nextPrompt);
 
+            // Check if the prompt is not completed, then set it as the current prompt
             if (!this._prompts[i]._completed()) {
-                // console.log("Running");
                 this.currentPrompt = this._prompts[i];
-
+                this.promptIndex = i;
                 break;
             }
         }
     }
 
+    // Adds a click event listener to the submit button to navigate to the next page.
     addOnClick() {
         this.buttonElement.onclick = function () {
             if (this.nextPrompt != "End") {
@@ -50,26 +53,24 @@ class Page {
             }
         }.bind(this);
     }
+
+    // Updates the UI based on the current prompt type.
     setPrompt() {
         const currentPromptTitle = document.querySelector(".title");
-
+        const progressTrackerStep = document.querySelector(`.progress-tracker div:nth-child(${this.promptIndex + 1})`);
         const currentPromptType = this.currentPrompt.constructor.name;
-        console.log(currentPromptTitle);
+
+        progressTrackerStep.setAttribute("data-current", "");
+
         switch (currentPromptType) {
-            // Change page contnet for journals.html
             case "Journal":
                 const journalTextArea = document.querySelector("#journal-textbox");
-
-                // Change Journal Prompt
                 currentPromptTitle.innerHTML = this.currentPrompt.title;
+                journalTextArea.value = ""; // Reset journal input
+                break;
 
-                // Reset Journal's text area to blank
-                journalTextArea.value = "";
-
-            // Change page contnet for feelings.html
             case "Feelings":
                 const feelingsChips = document.querySelectorAll(".feeling-btn");
-
                 currentPromptTitle.innerHTML = this.currentPrompt.title;
 
                 feelingsChips.forEach(
@@ -77,18 +78,18 @@ class Page {
                         chip.innerHTML = this.currentPrompt.feelings[index];
                     }.bind(this)
                 );
+                break;
 
             case "Emotions":
                 currentPromptTitle.innerHTML = this.currentPrompt.title;
+                break;
         }
     }
 
+    // Navigates to the appropriate page based on the next prompt type.
     nextPage(page) {
         console.log(`Next page: ${page}`);
-
         this.currentPrompt.markCompleted();
-
-        // console.log(this.nextPrompt);
 
         switch (page) {
             case "Journal":
@@ -112,33 +113,34 @@ class Page {
         }
     }
 }
-/////////
+
+// Base Prompt class
 class Prompt {
     constructor(title) {
         this.title = title;
-        this.slug = title // Removes spaces and special characters, replaces spaces with dashes
+        this.slug = title
             .toLowerCase()
             .trim()
             .replace(/[^a-z0-9\s-]/g, "")
             .replace(/\s+/g, "-")
             .replace(/--+/g, "-");
 
+        // Check if prompt is completed (stored in sessionStorage)
         this._completed = function () {
-            // A function to check the storage and see if it has been marked completed
-            const completed = sessionStorage.getItem(`${this.slug}-completed`);
-            if (completed == "true") {
-                return true;
-            } else return false;
+            return sessionStorage.getItem(`${this.slug}-completed`) === "true";
         };
     }
+
+    /**
+     * Marks the prompt as completed in sessionStorage.
+     */
     markCompleted() {
-        // A function that marks the promp completed in storage
         console.log("Marking Prompt Complete");
-        // this._completed = bool;
         sessionStorage.setItem(`${this.slug}-completed`, true);
     }
 }
 
+// Journal class extends Prompt
 class Journal extends Prompt {
     constructor(title, note = null) {
         super(title);
@@ -146,20 +148,25 @@ class Journal extends Prompt {
     }
 }
 
+// Emotions class extends Prompt
 class Emotions extends Prompt {
     constructor(title, emotions) {
         super(title);
         this.emotions = emotions;
     }
 }
+
+// Emotion object class. These objects sit within an Emotions object as an array
 class Emotion {
     constructor(name) {
         this.name = name;
-        this.cssColor = `--${name.toLowerCase()}-color`;
-        this.svgIcon = `face_${name}.svg`;
-        this.phrase = `I'm feeling ${name}!`;
+        this.cssColor = `--${name.toLowerCase()}-color`; // CSS variable for emotion color
+        this.svgIcon = `face_${name}.svg`; // Icon filename
+        this.phrase = `I'm feeling ${name}!`; // Display phrase
     }
 }
+
+// Feelings class extends Prompt
 class Feelings extends Prompt {
     constructor(title, feelings) {
         super(title);
@@ -177,7 +184,7 @@ const fearEmotion = new Emotion("Afraid");
 // EMOTION PROMPT OBJECT VARIABLE
 const emotionPrompt = new Emotions("How are you feeling today?", [happyEmotion, sadEmotion, angryEmotion, disgustEmotion, fearEmotion]);
 
-// JOURAL PROMPT OBJECT VARIABLES
+// JOURNAL PROMPT OBJECT VARIABLES
 const journalPrompt1 = new Journal("What is causing your emotions right now?");
 const journalPrompt2 = new Journal("What would make your day better?");
 const journalPrompt3 = new Journal("Release Through Writing", "Let yourself vent freely, even if it doesn't make sense.");
@@ -193,15 +200,5 @@ const feelingsPrompt2 = new Feelings("How do you want to express yourself right 
 // ORDER OF PROMPTS/PAGES; Do NOT mutate this list with any methods/functions.
 const PROMPT_ORDER = [emotionPrompt, journalPrompt1, feelingsPrompt1, feelingsPrompt2, journalPrompt2, journalPrompt3, journalPrompt4];
 
-// Document Page Object variable; restored from user's cache even if pages change.
-const fetchPage = function () {
-    if (sessionStorage.getItem("document-page") !== null) {
-        console.log("---- FOUND PREVIOUS PAGE OBJECT ----");
-        const previousPage = JSON.parse(sessionStorage.getItem("document-page"));
-        return new Page(PROMPT_ORDER, previousPage._promptIndex);
-    } else return new Page(PROMPT_ORDER, 0);
-};
+// Initialize the document page
 const documentPage = new Page(PROMPT_ORDER);
-// documentPage.savePage();
-// documentPage.addOnClick();
-//////////////////

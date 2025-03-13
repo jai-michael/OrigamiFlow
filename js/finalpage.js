@@ -1,22 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const emergingBoat = document.getElementById('emergingBoat');
+// Wait until the DOM content is fully loaded before executing the script
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the boat element by its ID
+    const emergingBoat = document.getElementById("emergingBoat");
 
-    emergingBoat.addEventListener('animationend', function(event) {
-        if (event.animationName === 'emergeAnimation') {
-            // Remove the 'emerging' class to avoid resetting the animation
-            emergingBoat.classList.remove('emerging');
+    /**
+     * Listens for the end of an animation on the boat element.
+     * When the 'emergeAnimation' finishes, it transitions the boat into a floating state.
+     */
+    emergingBoat.addEventListener("animationend", function (event) {
+        // Check if the ended animation is specifically 'emergeAnimation'
+        if (event.animationName === "emergeAnimation") {
+            // Remove the 'emerging' class to prevent the animation from restarting
+            emergingBoat.classList.remove("emerging");
 
-            // Add 'floating' to smoothly transition into the floating movement
-            emergingBoat.classList.add('floating');
+            // Add the 'floating' class to smoothly transition into the floating animation
+            emergingBoat.classList.add("floating");
         }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const button = document.getElementById('completeJournalBtn');
-
-    // Example functionality: Reload the page when the button is clicked
-    button.addEventListener('click', function() {
-        window.location.reload(); // Refreshes the page to start a new journal entry
     });
 });

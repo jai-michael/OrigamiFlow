@@ -116,7 +116,7 @@ nav div {
     align-items: center;
     justify-content: center;
 }
-.progress-tracker div[current] {
+.progress-tracker div[data-current] {
     background-color: #ffffff71;
     border-radius: 15px;
     border: var(--general-border);
