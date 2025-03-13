@@ -187,7 +187,7 @@ const emotionPrompt = new Emotions("How are you feeling today?", [happyEmotion, 
 // JOURNAL PROMPT OBJECT VARIABLES
 const journalPrompt1 = new Journal("What is causing your emotions right now?");
 const journalPrompt2 = new Journal("What would make your day better?");
-const journalPrompt3 = new Journal("Whats on your mind right now ");
+const journalPrompt3 = new Journal("What's on your mind right now ");
 const journalPrompt4 = new Journal("Write a positive affirmation about yourself");
 
 // FEELINGS PROMPT OBJECT VARIABLES
