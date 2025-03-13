@@ -79,3 +79,9 @@
 .voice-button img {
     height: 20px;
 }
+
+main button:hover,
+main button:focus {
+    background-color: #614735; /* Slightly lighter brown */
+    transform: scale(1.05); /* Slight lift on hover */
+}

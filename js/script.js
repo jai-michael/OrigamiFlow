@@ -10,6 +10,7 @@ class Page {
         // HTML Element <button.submit>
         this.nextPrompt = undefined;
         this.currentPrompt = undefined;
+        this.promptIndex = undefined;
         this.findPosition();
         this.addOnClick();
         this.setPrompt();
@@ -71,9 +72,12 @@ class Page {
 
                 currentPromptTitle.innerHTML = this.currentPrompt.title;
 
-                feelingsChips.forEach(function (chip, index) {
-                    chip.innerHTML = this.currentPrompt.feelings[index];
-                });
+                feelingsChips.forEach(
+                    function (chip, index) {
+                        chip.innerHTML = this.currentPrompt.feelings[index];
+                    }.bind(this)
+                );
+
             case "Emotions":
                 currentPromptTitle.innerHTML = this.currentPrompt.title;
         }
