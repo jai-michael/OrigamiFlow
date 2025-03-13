@@ -118,7 +118,7 @@ class Page {
 class Prompt {
     constructor(title) {
         this.title = title;
-        this.slug = title
+        this.slug = title // SessionStorage key name
             .toLowerCase()
             .trim()
             .replace(/[^a-z0-9\s-]/g, "")
@@ -187,8 +187,8 @@ const emotionPrompt = new Emotions("How are you feeling today?", [happyEmotion, 
 // JOURNAL PROMPT OBJECT VARIABLES
 const journalPrompt1 = new Journal("What is causing your emotions right now?");
 const journalPrompt2 = new Journal("What would make your day better?");
-const journalPrompt3 = new Journal("Release Through Writing", "Let yourself vent freely, even if it doesn't make sense.");
-const journalPrompt4 = new Journal("Write a positive affirmation about yourself", "(e.g. “I am worthy of happiness.”)");
+const journalPrompt3 = new Journal("Whats on your mind right now ");
+const journalPrompt4 = new Journal("Write a positive affirmation about yourself");
 
 // FEELINGS PROMPT OBJECT VARIABLES
 const feelings1 = ["Weak", "Stiff", "Numb", "Tense", "Relaxed", "Balanced", "Restless", "Anxious", "Energized", "Excited"];
