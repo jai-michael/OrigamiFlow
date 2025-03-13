@@ -22,8 +22,8 @@
     --primary-h1: hsla(16, 27%, 23%, 1);
 
     /* Emotion Colors */
-    --happy-color: hsla(74, 41%, 57%, 1);
-    --happy-color-light: hsla(74, 61%, 78%, 1);
+    --happy-color: hsla(35, 74%, 63%, 1);
+    --happy-color-light: hsla(35, 97%, 77%, 1);
 
     --sad-color: hsla(215, 65%, 74%, 1);
     --sad-color-light: hsla(215, 88%, 84%, 1);
@@ -31,11 +31,11 @@
     --angry-color: hsla(7, 89%, 62%, 1);
     --angry-color-light: hsla(7, 92%, 75%, 1);
 
-    --afraid-color: hsla(35, 74%, 63%, 1);
-    --afraid-color-light: hsla(35, 97%, 77%, 1);
+    --afraid-color: hsla(262, 92%, 77%, 1);
+    --afraid-color-light: hsla(263, 100%, 84%, 1);
 
-    --disgust-color: hsla(262, 92%, 77%, 1);
-    --disgust-color-light: hsla(263, 100%, 84%, 1);
+    --disgust-color: hsla(74, 41%, 57%, 1);
+    --disgust-color-light: hsla(74, 61%, 78%, 1);
 
     /* Box Shadow and Border for UI Components */
     --general-shadow: 0px 1px 20px 0px hsla(24, 12%, 41%, 0.2);

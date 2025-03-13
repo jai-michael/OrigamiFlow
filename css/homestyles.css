@@ -13,7 +13,8 @@ body {
 }
 
 /* Boat Containers (Top and Bottom) */
-.top-boats, .bottom-boats {
+.top-boats,
+.bottom-boats {
     width: 100%;
     display: flex;
     justify-content: space-between; /* Positions boats at opposite ends */
@@ -74,7 +75,7 @@ body {
 
 /* Main Title Styling */
 .title {
-    color: #4B332B;
+    color: #4b332b;
     font-family: Nunito;
     font-size: 100px;
     font-weight: 700;
@@ -87,7 +88,7 @@ body {
 /* Description Text Styling */
 .description {
     width: 536px; /* Fixed width for readability */
-    color: #76675D;
+    color: #76675d;
     font-family: Nunito, sans-serif;
     font-size: 30px;
     font-weight: 500;
@@ -106,6 +107,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
 }
 
 /* Button Hover Effect */
@@ -116,21 +118,37 @@ body {
 
 /* Boat Rocking Animations */
 @keyframes rock0 {
-    0% { transform: translateY(0) rotate(-8deg); }
-    100% { transform: translateY(-5px) rotate(8deg); }
+    0% {
+        transform: translateY(0) rotate(-8deg);
+    }
+    100% {
+        transform: translateY(-5px) rotate(8deg);
+    }
 }
 
 @keyframes rock1 {
-    0% { transform: translateY(0) rotate(8deg); }
-    100% { transform: translateY(-5px) rotate(-8deg); }
+    0% {
+        transform: translateY(0) rotate(8deg);
+    }
+    100% {
+        transform: translateY(-5px) rotate(-8deg);
+    }
 }
 
 @keyframes rock2 {
-    0% { transform: translateY(0) rotate(-8deg); }
-    100% { transform: translateY(-5px) rotate(8deg); }
+    0% {
+        transform: translateY(0) rotate(-8deg);
+    }
+    100% {
+        transform: translateY(-5px) rotate(8deg);
+    }
 }
 
 @keyframes rock3 {
-    0% { transform: translateY(0) rotate(8deg); }
-    100% { transform: translateY(-5px) rotate(-8deg); }
+    0% {
+        transform: translateY(0) rotate(8deg);
+    }
+    100% {
+        transform: translateY(-5px) rotate(-8deg);
+    }
 }
